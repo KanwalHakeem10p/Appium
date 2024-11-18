@@ -1,6 +1,6 @@
-package pages;
-import base.AppDriver;
-import base.AppFactory;
+package COM.pages;
+import COM.QA.base.AppDriver;
+import COM.QA.base.AppFactory;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
@@ -26,6 +26,9 @@ import java.time.Duration;
 
         By swagslabHeader = By.xpath("//android.widget.ScrollView[@content-desc=\"test-Login\"]/android.view.ViewGroup/android.widget.ImageView[1]");
 
+        @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]")
+        public WebElement errorMessage;
+
         public void enterUserName(String userName){
             new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(swagslabHeader));
             userNameTextBox.sendKeys(userName);
@@ -35,7 +38,12 @@ import java.time.Duration;
             passwordTextBox.sendKeys(password);
         }
 
-        public  void clickLoginBtn(){
-            loginBtn.click();
+        public productPage clickLoginBtn(){
+            clickElement(loginBtn, "Clicking Login Button");
+            return new productPage();
+        }
+
+        public String getErrorMessage() {
+            return getAttribute(errorMessage, "text");
         }
 }

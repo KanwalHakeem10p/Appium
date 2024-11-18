@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SmokeSuite" parallel="false">
+    <listeners>
+        <listener class-name="COM.listeners.TestListeners"></listener>
+    </listeners>
     <test name="ValidLogin">
         <parameter name="platformName" value="Android"></parameter>
         <parameter name="platformVersion" value="14"></parameter>
         <parameter name="deviceName" value="emulator-5554"></parameter>
         <classes>
-            <class name="testcases.LoginTest"></class>
+            <class name="COM.testcases.LoginTest"></class>
         </classes>
     </test>
 </suite>
