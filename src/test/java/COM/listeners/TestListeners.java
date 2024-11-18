@@ -1,8 +1,8 @@
 package COM.listeners;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-import COM.QA.base.AppDriver;
-import COM.QA.base.AppFactory;
+import COM.base.AppDriver;
+import COM.base.AppFactory;
 import COM.reports.ExtentReport;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
@@ -11,7 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.Reporter;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;

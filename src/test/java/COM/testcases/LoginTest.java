@@ -1,18 +1,15 @@
 package COM.testcases;
-import COM.QA.base.AppFactory;
+import COM.base.AppFactory;
 import COM.pages.loginPage;
 import COM.pages.productPage;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import COM.reports.ExtentReport;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
