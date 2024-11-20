@@ -29,8 +29,8 @@ import java.time.Duration;
         @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]")
         public WebElement errorMessage;
 
-        @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Menu\"]/android.view.ViewGroup/android.widget.ImageView")
-        public WebElement logout;
+        @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"LOGOUT\"]")
+        public WebElement logoutBtn;
 
         public void enterUserName(String userName){
             new WebDriverWait(AppDriver.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(swagslabHeader));
@@ -51,6 +51,10 @@ import java.time.Duration;
         }
 
         public void clickLogout(){
-            clickElement(logout, "Clicking Logout button");
+            clickElement(logoutBtn, "Clicking Logout button");
+        }
+
+        public boolean IsUserNameDisplayed(){
+            return userNameTextBox.isDisplayed();
         }
 }

@@ -48,11 +48,16 @@ public class ProductTest extends AppFactory {
         LoginPage.enterUserName(loginUser.getJSONObject("validUserAndPassword").getString("userName"));
         LoginPage.enterPassword(loginUser.getJSONObject("validUserAndPassword").getString("password"));
         productPage = LoginPage.clickLoginBtn();
-        String expectedTitle = stringHashMap.get("product_title");
-        String actualTitle = productPage.getTitle();
-        utilities.log().info("Actual Product Title is " + actualTitle + "\nExpected Product Title is " + expectedTitle);
-        Assert.assertEquals(actualTitle, expectedTitle);
-        /*productPage.clickProduct();  */
-        /*LoginPage.clickLogout();*/
+        String expectedProductListTitle = stringHashMap.get("product_title");
+        String actualProductListTitle = productPage.getTitle();
+        utilities.log().info("Actual Product Title is " + actualProductListTitle + "\nExpected Product Title is " + expectedProductListTitle);
+        Assert.assertEquals(actualProductListTitle, expectedProductListTitle);
+        productPage.clickProduct();
+        String expectedProductDetailTitle = stringHashMap.get("productDetail_title");
+        String actualProductDetailTitle = productPage.getProductTitle();
+        utilities.log().info("Actual Product Detail Title is " + actualProductDetailTitle + "\nExpected Product Detail Title is " + expectedProductDetailTitle);
+        Assert.assertEquals(actualProductDetailTitle, expectedProductDetailTitle);
+        productPage.clickLeftNavigationBar();
+        LoginPage.clickLogout();
     }
 }

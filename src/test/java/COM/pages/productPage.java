@@ -12,17 +12,27 @@ public class productPage  extends AppFactory{
     }
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"PRODUCTS\"]")
+    public WebElement productHeader;
 
     @AndroidFindBy(xpath ="//android.widget.TextView[@text=\"Sauce Labs Backpack\"]")
+    public WebElement productImageClick;
 
-    public WebElement productHeader;
+    @AndroidFindBy(xpath="//android.widget.TextView[@text=\"Sauce Labs Backpack\"]")
     public WebElement productDetail;
 
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Menu\"]/android.view.ViewGroup/android.widget.ImageView")
+    public WebElement LeftNavigation;
 
     public String getTitle(){
         return getAttribute(productHeader, "text");
     }
     public void clickProduct(){
-        clickElement(productDetail, "Clicking Product Image");
+        clickElement(productImageClick, "Clicking Product Image");
+    }
+    public String getProductTitle(){
+        return getAttribute(productDetail, "text");
+    }
+    public void clickLeftNavigationBar(){
+        clickElement(LeftNavigation, "Clicking SideNavigation Button");
     }
 }

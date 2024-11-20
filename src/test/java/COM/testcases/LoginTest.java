@@ -43,7 +43,7 @@ public class LoginTest extends AppFactory{
         }
     }
 
-    @Test
+    @Test (priority=1)
     public void verifyInvalidUsername() {
         utilities.log().info("This test is used to login with invalid Username and valid Password");
         LoginPage.enterUserName(loginUser.getJSONObject("invalidUser").getString("userName"));
@@ -56,7 +56,7 @@ public class LoginTest extends AppFactory{
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
 
     }
-    @Test
+    @Test (priority=2)
     public void verifyInvalidPassword() {
         utilities.log().info("This test is used to login with valid Username and invalid Password");
         LoginPage.enterUserName(loginUser.getJSONObject("invalidPassword").getString("userName"));
@@ -70,7 +70,7 @@ public class LoginTest extends AppFactory{
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
 
     }
-    @Test
+    @Test (priority=3)
     public void verifyValidLogin() {
         utilities.log().info("This test is used to login with valid Username and valid Password");
         LoginPage.enterUserName(loginUser.getJSONObject("validUserAndPassword").getString("userName"));
@@ -80,6 +80,14 @@ public class LoginTest extends AppFactory{
         String actualTitle = productPage.getTitle();
         utilities.log().info("Actual Product Title is " + actualTitle + "\nExpected Product Title is " + expectedTitle);
         Assert.assertEquals(actualTitle, expectedTitle);
+    }
+
+    @Test (priority=4)
+    public void verifyLogout(){
+        utilities.log().info("This test is used to logout from the app");
+        productPage.clickLeftNavigationBar();
+        LoginPage.clickLogout();
+        Assert.assertTrue(LoginPage.IsUserNameDisplayed(), "Logout Failed");
     }
 
     @AfterTest
