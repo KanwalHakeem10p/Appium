@@ -29,7 +29,8 @@ import java.time.Duration;
         @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]")
         public WebElement errorMessage;
 
-        @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"LOGOUT\"]")
+        //@AndroidFindBy(xpath = "//android.widget.TextView[@text=\"LOGOUT\"]")
+        @AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc=\"test-LOGOUT\"]")
         public WebElement logoutBtn;
 
         public void enterUserName(String userName){

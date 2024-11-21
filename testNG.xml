@@ -4,13 +4,21 @@
     <listeners>
         <listener class-name="COM.listeners.TestListeners"></listener>
     </listeners>
-    <test name="ValidLogin">
+    <test name="LoginScreenTest">
         <parameter name="platformName" value="Android"></parameter>
         <parameter name="platformVersion" value="14"></parameter>
         <parameter name="deviceName" value="emulator-5554"></parameter>
         <classes>
-            <!-- <class name="COM.testcases.LoginTest"></class> !-->
-             <class name="COM.testcases.ProductTest"></class>
+             <class name="COM.testcases.LoginTest"></class>
           </classes>
-      </test>
+    </test>
+        <test name="ProductScreenTest">
+            <parameter name="platformName" value="Android"></parameter>
+            <parameter name="platformVersion" value="14"></parameter>
+            <parameter name="deviceName" value="emulator-5554"></parameter>
+            <classes>
+                <class name="COM.testcases.ProductTest"></class>
+            </classes>
+        </test>
+
   </suite>

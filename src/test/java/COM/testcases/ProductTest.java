@@ -5,9 +5,8 @@ import COM.pages.productPage;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
@@ -59,5 +58,8 @@ public class ProductTest extends AppFactory {
         Assert.assertEquals(actualProductDetailTitle, expectedProductDetailTitle);
         productPage.clickLeftNavigationBar();
         LoginPage.clickLogout();
+
     }
+
+
 }

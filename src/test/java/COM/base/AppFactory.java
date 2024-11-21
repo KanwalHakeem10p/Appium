@@ -122,10 +122,6 @@ public class AppFactory {
         return dateTime;
     }
 
-    @AfterTest
-    public static void quitDriver() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+
+
 }

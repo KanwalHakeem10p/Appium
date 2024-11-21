@@ -2,13 +2,10 @@ package COM.testcases;
 import COM.base.AppFactory;
 import COM.pages.loginPage;
 import COM.pages.productPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -90,8 +87,4 @@ public class LoginTest extends AppFactory{
         Assert.assertTrue(LoginPage.IsUserNameDisplayed(), "Logout Failed");
     }
 
-    @AfterTest
-    public void tearDown(){
-        AppFactory.quitDriver();
-    }
-}
+   }
